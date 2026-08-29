@@ -36,7 +36,6 @@
   <div class="flex h-full">
     <!-- Sidebar -->
     <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 bg-slate-900 text-white flex flex-col transition-transform duration-300 lg:translate-x-0 -translate-x-full">
-      <!-- Logo -->
       <div class="flex items-center gap-2.5 px-5 h-16 border-b border-slate-800 shrink-0">
         <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center">
           <i data-lucide="building-2" class="w-4 h-4 text-white"></i>
@@ -46,48 +45,35 @@
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
-
-      <!-- Nav -->
       <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
         <a href="#" data-page="dashboard" class="nav-item active flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium bg-brand-600/20 text-brand-300">
-          <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
-          Tableau de bord
+          <i data-lucide="layout-dashboard" class="w-5 h-5"></i> Tableau de bord
         </a>
         <a href="#" data-page="residences" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-          <i data-lucide="building-2" class="w-5 h-5"></i>
-          Établissements
+          <i data-lucide="building-2" class="w-5 h-5"></i> Établissements
         </a>
         <a href="#" data-page="rooms" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-          <i data-lucide="bed-double" class="w-5 h-5"></i>
-          Chambres
+          <i data-lucide="bed-double" class="w-5 h-5"></i> Chambres
         </a>
         <a href="#" data-page="bookings" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-          <i data-lucide="calendar-check" class="w-5 h-5"></i>
-          Réservations
+          <i data-lucide="calendar-check" class="w-5 h-5"></i> Réservations
         </a>
         <a href="#" data-page="cleaning" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-          <i data-lucide="sparkles" class="w-5 h-5"></i>
-          Ménage
+          <i data-lucide="sparkles" class="w-5 h-5"></i> Ménage
         </a>
         <a href="#" data-page="accounting" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-          <i data-lucide="wallet" class="w-5 h-5"></i>
-          Comptabilité
+          <i data-lucide="wallet" class="w-5 h-5"></i> Comptabilité
         </a>
         <a href="#" data-page="employees" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-          <i data-lucide="users" class="w-5 h-5"></i>
-          Employés
+          <i data-lucide="users" class="w-5 h-5"></i> Employés
         </a>
         <a href="#" data-page="subscription" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-          <i data-lucide="credit-card" class="w-5 h-5"></i>
-          Abonnement
+          <i data-lucide="credit-card" class="w-5 h-5"></i> Abonnement
         </a>
         <a href="#" data-page="settings" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-          <i data-lucide="settings" class="w-5 h-5"></i>
-          Paramètres
+          <i data-lucide="settings" class="w-5 h-5"></i> Paramètres
         </a>
       </nav>
-
-      <!-- User footer -->
       <div class="p-4 border-t border-slate-800 shrink-0">
         <div class="flex items-center gap-3">
           <div class="w-9 h-9 rounded-full bg-brand-500 flex items-center justify-center text-sm font-bold">MK</div>
@@ -102,36 +88,30 @@
       </div>
     </aside>
 
-    <!-- Overlay mobile -->
     <div id="sidebar-overlay" class="fixed inset-0 z-30 bg-black/50 lg:hidden hidden"></div>
 
-    <!-- Main -->
     <div class="flex-1 flex flex-col min-w-0 lg:ml-64 h-full">
       <!-- Header -->
       <header class="sticky top-0 z-20 h-16 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 flex items-center gap-4 px-4 sm:px-6 shrink-0">
         <button id="sidebar-open" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
           <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
-
         <div class="flex-1 flex items-center gap-3">
           <div class="relative max-w-md w-full hidden sm:block">
             <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></i>
             <input type="search" placeholder="Rechercher réservation, chambre, client…" class="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none" id="global-search">
           </div>
         </div>
-
         <div class="flex items-center gap-2">
           <button id="theme-toggle" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
             <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
             <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
           </button>
-
           <div class="relative">
             <button id="notif-btn" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 relative">
               <i data-lucide="bell" class="w-5 h-5"></i>
               <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500"></span>
             </button>
-            <!-- Notif dropdown -->
             <div id="notif-dropdown" class="hidden absolute right-0 mt-2 w-80 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-800 overflow-hidden z-50">
               <div class="px-4 py-3 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
                 <span class="font-semibold text-sm">Notifications</span>
@@ -147,55 +127,44 @@
                   <p class="text-xs text-slate-500 mt-0.5">Il y a 45 min</p>
                 </div>
                 <div class="px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/50">
-                  <p class="text-sm font-medium">Paiement Wave reçu — 24 900 FCFA</p>
+                  <p class="text-sm font-medium">Paiement Wave reçu — 185 000 FCFA</p>
                   <p class="text-xs text-slate-500 mt-0.5">Hier</p>
                 </div>
               </div>
             </div>
           </div>
-
           <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-brand-600 px-2 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            Landing
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Landing
           </a>
         </div>
       </header>
 
-      <!-- Content pages -->
       <main class="flex-1 overflow-y-auto p-4 sm:p-6">
-        <!-- PAGE: Dashboard -->
+
+        <!-- ========== DASHBOARD ========== -->
         <div id="page-dashboard" class="page-content space-y-6">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <h1 class="font-display text-2xl font-bold">Tableau de bord</h1>
               <p class="text-sm text-slate-500 dark:text-slate-400">Aujourd'hui • Samedi 29 août 2026</p>
             </div>
-            <button id="btn-new-booking" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold shadow-lg shadow-brand-600/20">
-              <i data-lucide="plus" class="w-4 h-4"></i>
-              Nouvelle réservation
+            <button class="btn-new-booking inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold shadow-lg shadow-brand-600/20">
+              <i data-lucide="plus" class="w-4 h-4"></i> Nouvelle réservation
             </button>
           </div>
-
-          <!-- KPIs -->
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm">
               <div class="flex items-center justify-between mb-3">
                 <span class="text-xs font-medium text-slate-500 uppercase tracking-wide">Occupation</span>
-                <div class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-950/50 flex items-center justify-center">
-                  <i data-lucide="bed-double" class="w-4 h-4 text-brand-600"></i>
-                </div>
+                <div class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-950/50 flex items-center justify-center"><i data-lucide="bed-double" class="w-4 h-4 text-brand-600"></i></div>
               </div>
               <div class="text-2xl font-bold">87%</div>
-              <div class="text-xs text-emerald-600 mt-1 flex items-center gap-1">
-                <i data-lucide="trending-up" class="w-3 h-3"></i> +4% vs hier
-              </div>
+              <div class="text-xs text-emerald-600 mt-1 flex items-center gap-1"><i data-lucide="trending-up" class="w-3 h-3"></i> +4% vs hier</div>
             </div>
             <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm">
               <div class="flex items-center justify-between mb-3">
                 <span class="text-xs font-medium text-slate-500 uppercase tracking-wide">Recettes du jour</span>
-                <div class="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-950/50 flex items-center justify-center">
-                  <i data-lucide="wallet" class="w-4 h-4 text-emerald-600"></i>
-                </div>
+                <div class="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-950/50 flex items-center justify-center"><i data-lucide="wallet" class="w-4 h-4 text-emerald-600"></i></div>
               </div>
               <div class="text-2xl font-bold">2 450 000</div>
               <div class="text-xs text-slate-500 mt-1">FCFA</div>
@@ -203,9 +172,7 @@
             <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm">
               <div class="flex items-center justify-between mb-3">
                 <span class="text-xs font-medium text-slate-500 uppercase tracking-wide">Arrivées</span>
-                <div class="w-8 h-8 rounded-lg bg-violet-50 dark:bg-violet-950/50 flex items-center justify-center">
-                  <i data-lucide="log-in" class="w-4 h-4 text-violet-600"></i>
-                </div>
+                <div class="w-8 h-8 rounded-lg bg-violet-50 dark:bg-violet-950/50 flex items-center justify-center"><i data-lucide="log-in" class="w-4 h-4 text-violet-600"></i></div>
               </div>
               <div class="text-2xl font-bold">12</div>
               <div class="text-xs text-slate-500 mt-1">dont 3 en attente</div>
@@ -213,17 +180,13 @@
             <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm">
               <div class="flex items-center justify-between mb-3">
                 <span class="text-xs font-medium text-slate-500 uppercase tracking-wide">Départs</span>
-                <div class="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-950/50 flex items-center justify-center">
-                  <i data-lucide="log-out" class="w-4 h-4 text-amber-600"></i>
-                </div>
+                <div class="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-950/50 flex items-center justify-center"><i data-lucide="log-out" class="w-4 h-4 text-amber-600"></i></div>
               </div>
               <div class="text-2xl font-bold">8</div>
               <div class="text-xs text-slate-500 mt-1">2 en retard</div>
             </div>
           </div>
-
           <div class="grid lg:grid-cols-3 gap-6">
-            <!-- Mouvements -->
             <div class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm overflow-hidden">
               <div class="px-5 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
                 <h2 class="font-semibold">Mouvements du jour</h2>
@@ -269,185 +232,658 @@
                       <td class="px-5 py-3 text-slate-500">10:00</td>
                       <td class="px-5 py-3"><button class="action-btn text-xs font-semibold text-brand-600 hover:underline" data-action="checkout">Valider</button></td>
                     </tr>
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                      <td class="px-5 py-3 font-medium">Mariame Ouattara</td>
+                      <td class="px-5 py-3">215</td>
+                      <td class="px-5 py-3"><span class="inline-flex px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Check-in</span></td>
+                      <td class="px-5 py-3 text-slate-500">16:00</td>
+                      <td class="px-5 py-3"><button class="action-btn text-xs font-semibold text-brand-600 hover:underline" data-action="checkin">Valider</button></td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
             </div>
-
-            <!-- Chart occupancy -->
             <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm p-5">
               <h2 class="font-semibold mb-4">État du parc</h2>
-              <div class="relative h-48">
-                <canvas id="occupancyChart"></canvas>
-              </div>
+              <div class="relative h-48"><canvas id="occupancyChart"></canvas></div>
               <div class="mt-4 space-y-2 text-sm">
-                <div class="flex items-center justify-between">
-                  <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Occupées</span>
-                  <span class="font-medium">42</span>
-                </div>
-                <div class="flex items-center justify-between">
-                  <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span> Disponibles</span>
-                  <span class="font-medium">6</span>
-                </div>
-                <div class="flex items-center justify-between">
-                  <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> En ménage</span>
-                  <span class="font-medium">4</span>
-                </div>
+                <div class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Occupées</span><span class="font-medium">42</span></div>
+                <div class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span> Disponibles</span><span class="font-medium">6</span></div>
+                <div class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> En ménage</span><span class="font-medium">4</span></div>
               </div>
             </div>
           </div>
-
-          <!-- Revenue chart -->
           <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm p-5">
             <div class="flex items-center justify-between mb-4">
               <h2 class="font-semibold">Recettes 7 derniers jours</h2>
               <span class="text-xs text-slate-500">FCFA</span>
             </div>
-            <div class="h-56">
-              <canvas id="revenueChart"></canvas>
-            </div>
+            <div class="h-56"><canvas id="revenueChart"></canvas></div>
           </div>
         </div>
 
-        <!-- PAGE: Bookings -->
-        <div id="page-bookings" class="page-content hidden space-y-6">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <h1 class="font-display text-2xl font-bold">Réservations</h1>
-            <button id="btn-new-booking-2" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold">
-              <i data-lucide="plus" class="w-4 h-4"></i> Nouvelle réservation
-            </button>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <button class="filter-btn active px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-600 text-white">Toutes</button>
-            <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Confirmées</button>
-            <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">En cours</button>
-            <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Terminées</button>
-          </div>
-          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm overflow-hidden">
-            <table class="w-full text-sm">
-              <thead class="bg-slate-50 dark:bg-slate-800/50 text-left text-xs text-slate-500 uppercase">
-                <tr>
-                  <th class="px-5 py-3">Réf.</th>
-                  <th class="px-5 py-3">Client</th>
-                  <th class="px-5 py-3">Chambre</th>
-                  <th class="px-5 py-3">Arrivée</th>
-                  <th class="px-5 py-3">Départ</th>
-                  <th class="px-5 py-3">Statut</th>
-                  <th class="px-5 py-3">Montant</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
-                  <td class="px-5 py-3 font-mono text-xs">BK-2847</td>
-                  <td class="px-5 py-3 font-medium">Aya Koné</td>
-                  <td class="px-5 py-3">204</td>
-                  <td class="px-5 py-3">29/08</td>
-                  <td class="px-5 py-3">02/09</td>
-                  <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">Confirmée</span></td>
-                  <td class="px-5 py-3 font-medium">185 000 F</td>
-                </tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
-                  <td class="px-5 py-3 font-mono text-xs">BK-2841</td>
-                  <td class="px-5 py-3 font-medium">Jean Bamba</td>
-                  <td class="px-5 py-3">112</td>
-                  <td class="px-5 py-3">27/08</td>
-                  <td class="px-5 py-3">29/08</td>
-                  <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">En cours</span></td>
-                  <td class="px-5 py-3 font-medium">90 000 F</td>
-                </tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
-                  <td class="px-5 py-3 font-mono text-xs">BK-2835</td>
-                  <td class="px-5 py-3 font-medium">Fatou Diallo</td>
-                  <td class="px-5 py-3">308</td>
-                  <td class="px-5 py-3">29/08</td>
-                  <td class="px-5 py-3">01/09</td>
-                  <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">Confirmée</span></td>
-                  <td class="px-5 py-3 font-medium">210 000 F</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- PAGE: Cleaning -->
-        <div id="page-cleaning" class="page-content hidden space-y-6">
-          <h1 class="font-display text-2xl font-bold">Ménage</h1>
-          <div class="grid md:grid-cols-3 gap-4">
-            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
-              <h3 class="text-sm font-semibold text-slate-500 mb-3 flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-amber-500"></span> À faire (4)
-              </h3>
-              <div class="space-y-2">
-                <div class="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/50 text-sm">
-                  <div class="font-medium">Chambre 101</div>
-                  <div class="text-xs text-slate-500 mt-0.5">Check-out 10:00</div>
-                </div>
-                <div class="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/50 text-sm">
-                  <div class="font-medium">Chambre 215</div>
-                  <div class="text-xs text-slate-500 mt-0.5">Check-out 11:00</div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
-              <h3 class="text-sm font-semibold text-slate-500 mb-3 flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-blue-500"></span> En cours (2)
-              </h3>
-              <div class="space-y-2">
-                <div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/50 text-sm">
-                  <div class="font-medium">Chambre 204</div>
-                  <div class="text-xs text-slate-500 mt-0.5">Assigné: Awa</div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
-              <h3 class="text-sm font-semibold text-slate-500 mb-3 flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Terminées (6)
-              </h3>
-              <div class="space-y-2">
-                <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/50 text-sm">
-                  <div class="font-medium">Chambre 112</div>
-                  <div class="text-xs text-slate-500 mt-0.5">Terminé 09:45</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PAGE: Residences -->
+        <!-- ========== RESIDENCES ========== -->
         <div id="page-residences" class="page-content hidden space-y-6">
-          <div class="flex items-center justify-between">
-            <h1 class="font-display text-2xl font-bold">Établissements</h1>
-            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h1 class="font-display text-2xl font-bold">Établissements</h1>
+              <p class="text-sm text-slate-500">2 / 3 établissements (plan Croissance)</p>
+            </div>
+            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold" onclick="showToast('Modal ajout établissement (démo)')">
               <i data-lucide="plus" class="w-4 h-4"></i> Ajouter
             </button>
           </div>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 hover:shadow-lg transition-shadow">
-              <div class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/50 flex items-center justify-center mb-4">
-                <i data-lucide="building-2" class="w-6 h-6 text-brand-600"></i>
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/50 flex items-center justify-center">
+                  <i data-lucide="building-2" class="w-6 h-6 text-brand-600"></i>
+                </div>
+                <span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Actif</span>
               </div>
               <h3 class="font-semibold text-lg">Hôtel Riviera</h3>
-              <p class="text-sm text-slate-500 mt-1">Abidjan, Cocody • 28 chambres</p>
-              <div class="mt-4 flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Actif</span>
-                <span class="text-xs text-slate-500">87% occupation</span>
+              <p class="text-sm text-slate-500 mt-1">Cocody, Abidjan</p>
+              <div class="mt-4 grid grid-cols-3 gap-2 text-center">
+                <div class="rounded-lg bg-slate-50 dark:bg-slate-800 p-2">
+                  <div class="text-lg font-bold">28</div>
+                  <div class="text-[10px] text-slate-500">Chambres</div>
+                </div>
+                <div class="rounded-lg bg-slate-50 dark:bg-slate-800 p-2">
+                  <div class="text-lg font-bold text-emerald-600">87%</div>
+                  <div class="text-[10px] text-slate-500">Occupation</div>
+                </div>
+                <div class="rounded-lg bg-slate-50 dark:bg-slate-800 p-2">
+                  <div class="text-lg font-bold">12</div>
+                  <div class="text-[10px] text-slate-500">Arrivées</div>
+                </div>
               </div>
+              <button class="mt-4 w-full py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800" onclick="showToast('Ouverture détail Hôtel Riviera')">Voir le détail</button>
             </div>
             <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 hover:shadow-lg transition-shadow">
-              <div class="w-12 h-12 rounded-xl bg-violet-100 dark:bg-violet-900/50 flex items-center justify-center mb-4">
-                <i data-lucide="building-2" class="w-6 h-6 text-violet-600"></i>
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl bg-violet-100 dark:bg-violet-900/50 flex items-center justify-center">
+                  <i data-lucide="building-2" class="w-6 h-6 text-violet-600"></i>
+                </div>
+                <span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Actif</span>
               </div>
               <h3 class="font-semibold text-lg">Résidence Palm Beach</h3>
-              <p class="text-sm text-slate-500 mt-1">Grand-Bassam • 16 chambres</p>
-              <div class="mt-4 flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Actif</span>
-                <span class="text-xs text-slate-500">72% occupation</span>
+              <p class="text-sm text-slate-500 mt-1">Grand-Bassam</p>
+              <div class="mt-4 grid grid-cols-3 gap-2 text-center">
+                <div class="rounded-lg bg-slate-50 dark:bg-slate-800 p-2">
+                  <div class="text-lg font-bold">16</div>
+                  <div class="text-[10px] text-slate-500">Chambres</div>
+                </div>
+                <div class="rounded-lg bg-slate-50 dark:bg-slate-800 p-2">
+                  <div class="text-lg font-bold text-emerald-600">72%</div>
+                  <div class="text-[10px] text-slate-500">Occupation</div>
+                </div>
+                <div class="rounded-lg bg-slate-50 dark:bg-slate-800 p-2">
+                  <div class="text-lg font-bold">5</div>
+                  <div class="text-[10px] text-slate-500">Arrivées</div>
+                </div>
+              </div>
+              <button class="mt-4 w-full py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800" onclick="showToast('Ouverture détail Palm Beach')">Voir le détail</button>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 p-5 flex flex-col items-center justify-center min-h-[220px] text-center hover:border-brand-400 transition-colors cursor-pointer" onclick="showToast('Ajout 3e établissement (limite plan Croissance)')">
+              <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-3">
+                <i data-lucide="plus" class="w-6 h-6 text-slate-400"></i>
+              </div>
+              <p class="font-medium text-slate-600 dark:text-slate-300">Ajouter un établissement</p>
+              <p class="text-xs text-slate-500 mt-1">1 emplacement restant</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== ROOMS ========== -->
+        <div id="page-rooms" class="page-content hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h1 class="font-display text-2xl font-bold">Chambres</h1>
+              <p class="text-sm text-slate-500">Hôtel Riviera • 28 chambres</p>
+            </div>
+            <div class="flex gap-2">
+              <select class="px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm">
+                <option>Tous les types</option>
+                <option>Standard</option>
+                <option>Deluxe</option>
+                <option>Suite</option>
+              </select>
+              <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold" onclick="showToast('Ajout chambre (démo)')">
+                <i data-lucide="plus" class="w-4 h-4"></i> Ajouter
+              </button>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 text-center">
+              <div class="text-2xl font-bold text-emerald-600">22</div>
+              <div class="text-xs text-slate-500">Occupées</div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 text-center">
+              <div class="text-2xl font-bold text-brand-600">4</div>
+              <div class="text-xs text-slate-500">Disponibles</div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 text-center">
+              <div class="text-2xl font-bold text-amber-600">2</div>
+              <div class="text-xs text-slate-500">En ménage</div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 text-center">
+              <div class="text-2xl font-bold">28</div>
+              <div class="text-xs text-slate-500">Total</div>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-50 dark:bg-slate-800/50 text-left text-xs text-slate-500 uppercase">
+                  <tr>
+                    <th class="px-5 py-3">N°</th>
+                    <th class="px-5 py-3">Type</th>
+                    <th class="px-5 py-3">Étage</th>
+                    <th class="px-5 py-3">Tarif / nuit</th>
+                    <th class="px-5 py-3">Statut</th>
+                    <th class="px-5 py-3">Client actuel</th>
+                    <th class="px-5 py-3"></th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3 font-semibold">101</td>
+                    <td class="px-5 py-3">Standard</td>
+                    <td class="px-5 py-3">1</td>
+                    <td class="px-5 py-3">45 000 F</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">Ménage</span></td>
+                    <td class="px-5 py-3 text-slate-500">—</td>
+                    <td class="px-5 py-3"><button class="text-brand-600 text-xs font-semibold hover:underline" onclick="showToast('Édition chambre 101')">Modifier</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3 font-semibold">112</td>
+                    <td class="px-5 py-3">Standard</td>
+                    <td class="px-5 py-3">1</td>
+                    <td class="px-5 py-3">45 000 F</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Occupée</span></td>
+                    <td class="px-5 py-3">Jean Bamba</td>
+                    <td class="px-5 py-3"><button class="text-brand-600 text-xs font-semibold hover:underline" onclick="showToast('Édition chambre 112')">Modifier</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3 font-semibold">204</td>
+                    <td class="px-5 py-3">Deluxe</td>
+                    <td class="px-5 py-3">2</td>
+                    <td class="px-5 py-3">75 000 F</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Occupée</span></td>
+                    <td class="px-5 py-3">Aya Koné</td>
+                    <td class="px-5 py-3"><button class="text-brand-600 text-xs font-semibold hover:underline" onclick="showToast('Édition chambre 204')">Modifier</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3 font-semibold">215</td>
+                    <td class="px-5 py-3">Deluxe</td>
+                    <td class="px-5 py-3">2</td>
+                    <td class="px-5 py-3">75 000 F</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-brand-100 text-brand-700 dark:bg-brand-900/40 dark:text-brand-300">Disponible</span></td>
+                    <td class="px-5 py-3 text-slate-500">—</td>
+                    <td class="px-5 py-3"><button class="text-brand-600 text-xs font-semibold hover:underline" onclick="showToast('Édition chambre 215')">Modifier</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3 font-semibold">308</td>
+                    <td class="px-5 py-3">Suite</td>
+                    <td class="px-5 py-3">3</td>
+                    <td class="px-5 py-3">120 000 F</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Occupée</span></td>
+                    <td class="px-5 py-3">Fatou Diallo</td>
+                    <td class="px-5 py-3"><button class="text-brand-600 text-xs font-semibold hover:underline" onclick="showToast('Édition chambre 308')">Modifier</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3 font-semibold">310</td>
+                    <td class="px-5 py-3">Suite</td>
+                    <td class="px-5 py-3">3</td>
+                    <td class="px-5 py-3">120 000 F</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-brand-100 text-brand-700 dark:bg-brand-900/40 dark:text-brand-300">Disponible</span></td>
+                    <td class="px-5 py-3 text-slate-500">—</td>
+                    <td class="px-5 py-3"><button class="text-brand-600 text-xs font-semibold hover:underline" onclick="showToast('Édition chambre 310')">Modifier</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== BOOKINGS ========== -->
+        <div id="page-bookings" class="page-content hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <h1 class="font-display text-2xl font-bold">Réservations</h1>
+            <button class="btn-new-booking inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold">
+              <i data-lucide="plus" class="w-4 h-4"></i> Nouvelle réservation
+            </button>
+          </div>
+          <div class="flex flex-wrap gap-2 items-center">
+            <button class="filter-btn active px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-600 text-white">Toutes (24)</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Confirmées (8)</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">En cours (12)</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Terminées (3)</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Annulées (1)</button>
+            <div class="ml-auto flex gap-2">
+              <input type="date" class="px-3 py-1.5 rounded-lg text-xs bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700" value="2026-08-29">
+              <span class="text-slate-400 text-xs self-center">→</span>
+              <input type="date" class="px-3 py-1.5 rounded-lg text-xs bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700" value="2026-09-05">
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-50 dark:bg-slate-800/50 text-left text-xs text-slate-500 uppercase">
+                  <tr>
+                    <th class="px-5 py-3">Réf.</th>
+                    <th class="px-5 py-3">Client</th>
+                    <th class="px-5 py-3">Téléphone</th>
+                    <th class="px-5 py-3">Chambre</th>
+                    <th class="px-5 py-3">Arrivée</th>
+                    <th class="px-5 py-3">Départ</th>
+                    <th class="px-5 py-3">Nuits</th>
+                    <th class="px-5 py-3">Statut</th>
+                    <th class="px-5 py-3">Montant</th>
+                    <th class="px-5 py-3"></th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3 font-mono text-xs">BK-2847</td>
+                    <td class="px-5 py-3 font-medium">Aya Koné</td>
+                    <td class="px-5 py-3 text-slate-500">07 08 12 34 56</td>
+                    <td class="px-5 py-3">204 Deluxe</td>
+                    <td class="px-5 py-3">29/08</td>
+                    <td class="px-5 py-3">02/09</td>
+                    <td class="px-5 py-3">4</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">Confirmée</span></td>
+                    <td class="px-5 py-3 font-medium">300 000 F</td>
+                    <td class="px-5 py-3"><button class="text-brand-600 text-xs font-semibold hover:underline" onclick="showToast('Détail BK-2847')">Voir</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3 font-mono text-xs">BK-2841</td>
+                    <td class="px-5 py-3 font-medium">Jean Bamba</td>
+                    <td class="px-5 py-3 text-slate-500">05 05 98 76 54</td>
+                    <td class="px-5 py-3">112 Standard</td>
+                    <td class="px-5 py-3">27/08</td>
+                    <td class="px-5 py-3">29/08</td>
+                    <td class="px-5 py-3">2</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">En cours</span></td>
+                    <td class="px-5 py-3 font-medium">90 000 F</td>
+                    <td class="px-5 py-3"><button class="text-brand-600 text-xs font-semibold hover:underline" onclick="showToast('Check-out BK-2841')">Check-out</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3 font-mono text-xs">BK-2835</td>
+                    <td class="px-5 py-3 font-medium">Fatou Diallo</td>
+                    <td class="px-5 py-3 text-slate-500">01 02 03 04 05</td>
+                    <td class="px-5 py-3">308 Suite</td>
+                    <td class="px-5 py-3">29/08</td>
+                    <td class="px-5 py-3">01/09</td>
+                    <td class="px-5 py-3">3</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">Confirmée</span></td>
+                    <td class="px-5 py-3 font-medium">360 000 F</td>
+                    <td class="px-5 py-3"><button class="text-brand-600 text-xs font-semibold hover:underline" onclick="showToast('Détail BK-2835')">Voir</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3 font-mono text-xs">BK-2820</td>
+                    <td class="px-5 py-3 font-medium">Ibrahim Touré</td>
+                    <td class="px-5 py-3 text-slate-500">07 77 88 99 00</td>
+                    <td class="px-5 py-3">101 Standard</td>
+                    <td class="px-5 py-3">25/08</td>
+                    <td class="px-5 py-3">29/08</td>
+                    <td class="px-5 py-3">4</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">En cours</span></td>
+                    <td class="px-5 py-3 font-medium">180 000 F</td>
+                    <td class="px-5 py-3"><button class="text-brand-600 text-xs font-semibold hover:underline" onclick="showToast('Check-out BK-2820')">Check-out</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3 font-mono text-xs">BK-2812</td>
+                    <td class="px-5 py-3 font-medium">Sékou Coulibaly</td>
+                    <td class="px-5 py-3 text-slate-500">05 11 22 33 44</td>
+                    <td class="px-5 py-3">215 Deluxe</td>
+                    <td class="px-5 py-3">20/08</td>
+                    <td class="px-5 py-3">24/08</td>
+                    <td class="px-5 py-3">4</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Terminée</span></td>
+                    <td class="px-5 py-3 font-medium">300 000 F</td>
+                    <td class="px-5 py-3"><button class="text-brand-600 text-xs font-semibold hover:underline" onclick="showToast('Facture BK-2812')">Facture</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3 font-mono text-xs">BK-2801</td>
+                    <td class="px-5 py-3 font-medium">Aminata Traoré</td>
+                    <td class="px-5 py-3 text-slate-500">07 55 66 77 88</td>
+                    <td class="px-5 py-3">310 Suite</td>
+                    <td class="px-5 py-3">18/08</td>
+                    <td class="px-5 py-3">19/08</td>
+                    <td class="px-5 py-3">1</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300">Annulée</span></td>
+                    <td class="px-5 py-3 font-medium line-through text-slate-400">120 000 F</td>
+                    <td class="px-5 py-3"><button class="text-slate-400 text-xs font-semibold">—</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="px-5 py-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+              <span>Affichage 1–6 sur 24</span>
+              <div class="flex gap-1">
+                <button class="px-2 py-1 rounded border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800">Préc.</button>
+                <button class="px-2 py-1 rounded bg-brand-600 text-white">1</button>
+                <button class="px-2 py-1 rounded border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800">2</button>
+                <button class="px-2 py-1 rounded border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800">3</button>
+                <button class="px-2 py-1 rounded border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800">Suiv.</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- PAGE: Subscription -->
+        <!-- ========== CLEANING ========== -->
+        <div id="page-cleaning" class="page-content hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h1 class="font-display text-2xl font-bold">Ménage</h1>
+              <p class="text-sm text-slate-500">Kanban du jour • Hôtel Riviera</p>
+            </div>
+            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800" onclick="showToast('Assignation en masse (démo)')">
+              <i data-lucide="user-plus" class="w-4 h-4"></i> Assigner
+            </button>
+          </div>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
+              <h3 class="text-sm font-semibold text-slate-500 mb-3 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span> À faire <span class="ml-auto text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded-full">4</span>
+              </h3>
+              <div class="space-y-2">
+                <div class="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/50 text-sm cursor-pointer hover:shadow-md transition-shadow" onclick="showToast('Chambre 101 → En cours')">
+                  <div class="font-medium">Chambre 101</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Check-out 10:00 • Standard</div>
+                  <div class="mt-2 text-[10px] text-amber-700 dark:text-amber-400">Non assigné</div>
+                </div>
+                <div class="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/50 text-sm cursor-pointer hover:shadow-md transition-shadow" onclick="showToast('Chambre 118 → En cours')">
+                  <div class="font-medium">Chambre 118</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Check-out 11:00 • Standard</div>
+                  <div class="mt-2 text-[10px] text-amber-700 dark:text-amber-400">Non assigné</div>
+                </div>
+                <div class="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/50 text-sm">
+                  <div class="font-medium">Chambre 220</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Départ tardif • Deluxe</div>
+                  <div class="mt-2 text-[10px] text-amber-700 dark:text-amber-400">Priorité haute</div>
+                </div>
+                <div class="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/50 text-sm">
+                  <div class="font-medium">Chambre 305</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Check-out 12:00 • Suite</div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
+              <h3 class="text-sm font-semibold text-slate-500 mb-3 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span> En cours <span class="ml-auto text-xs bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded-full">2</span>
+              </h3>
+              <div class="space-y-2">
+                <div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/50 text-sm cursor-pointer hover:shadow-md transition-shadow" onclick="showToast('Chambre 204 marquée terminée')">
+                  <div class="font-medium">Chambre 204</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Deluxe • Départ 11:30</div>
+                  <div class="mt-2 flex items-center gap-2">
+                    <div class="w-5 h-5 rounded-full bg-violet-500 text-white text-[10px] flex items-center justify-center font-bold">A</div>
+                    <span class="text-[10px] text-blue-700 dark:text-blue-400">Awa Koné</span>
+                  </div>
+                </div>
+                <div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/50 text-sm">
+                  <div class="font-medium">Chambre 112</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Standard</div>
+                  <div class="mt-2 flex items-center gap-2">
+                    <div class="w-5 h-5 rounded-full bg-emerald-500 text-white text-[10px] flex items-center justify-center font-bold">M</div>
+                    <span class="text-[10px] text-blue-700 dark:text-blue-400">Mariam Diabaté</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
+              <h3 class="text-sm font-semibold text-slate-500 mb-3 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Terminées <span class="ml-auto text-xs bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded-full">6</span>
+              </h3>
+              <div class="space-y-2">
+                <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/50 text-sm opacity-80">
+                  <div class="font-medium">Chambre 108</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Terminé 09:15 • Awa</div>
+                </div>
+                <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/50 text-sm opacity-80">
+                  <div class="font-medium">Chambre 201</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Terminé 09:40 • Mariam</div>
+                </div>
+                <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/50 text-sm opacity-80">
+                  <div class="font-medium">Chambre 215</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Terminé 10:05 • Awa</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== ACCOUNTING ========== -->
+        <div id="page-accounting" class="page-content hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h1 class="font-display text-2xl font-bold">Comptabilité</h1>
+              <p class="text-sm text-slate-500">Août 2026 • Hôtel Riviera</p>
+            </div>
+            <div class="flex gap-2">
+              <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800" onclick="showToast('Export CSV téléchargé (démo)')">
+                <i data-lucide="download" class="w-4 h-4"></i> Export CSV
+              </button>
+              <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold" onclick="showToast('Enregistrement d\'un paiement')">
+                <i data-lucide="plus" class="w-4 h-4"></i> Paiement
+              </button>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs text-slate-500 uppercase mb-1">Recettes du mois</div>
+              <div class="text-2xl font-bold text-emerald-600">48,2 M</div>
+              <div class="text-xs text-slate-500">FCFA</div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs text-slate-500 uppercase mb-1">Encaissé</div>
+              <div class="text-2xl font-bold">41,5 M</div>
+              <div class="text-xs text-emerald-600">86% payé</div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs text-slate-500 uppercase mb-1">En attente</div>
+              <div class="text-2xl font-bold text-amber-600">6,7 M</div>
+              <div class="text-xs text-slate-500">12 factures</div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs text-slate-500 uppercase mb-1">Aujourd'hui</div>
+              <div class="text-2xl font-bold">2,45 M</div>
+              <div class="text-xs text-slate-500">FCFA</div>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+            <div class="px-5 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+              <h2 class="font-semibold">Dernières transactions</h2>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-50 dark:bg-slate-800/50 text-left text-xs text-slate-500 uppercase">
+                  <tr>
+                    <th class="px-5 py-3">Date</th>
+                    <th class="px-5 py-3">Réf. résa</th>
+                    <th class="px-5 py-3">Client</th>
+                    <th class="px-5 py-3">Mode</th>
+                    <th class="px-5 py-3">Montant</th>
+                    <th class="px-5 py-3">Statut</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3">29/08 09:12</td>
+                    <td class="px-5 py-3 font-mono text-xs">BK-2847</td>
+                    <td class="px-5 py-3">Aya Koné</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded text-xs bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">Wave</span></td>
+                    <td class="px-5 py-3 font-medium text-emerald-600">+ 150 000 F</td>
+                    <td class="px-5 py-3"><span class="text-xs text-emerald-600">Payé</span></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3">29/08 08:40</td>
+                    <td class="px-5 py-3 font-mono text-xs">BK-2841</td>
+                    <td class="px-5 py-3">Jean Bamba</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded text-xs bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300">Espèces</span></td>
+                    <td class="px-5 py-3 font-medium text-emerald-600">+ 90 000 F</td>
+                    <td class="px-5 py-3"><span class="text-xs text-emerald-600">Payé</span></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3">28/08 18:22</td>
+                    <td class="px-5 py-3 font-mono text-xs">BK-2835</td>
+                    <td class="px-5 py-3">Fatou Diallo</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded text-xs bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">Wave</span></td>
+                    <td class="px-5 py-3 font-medium text-amber-600">180 000 F</td>
+                    <td class="px-5 py-3"><span class="text-xs text-amber-600">Acompte</span></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3">28/08 14:05</td>
+                    <td class="px-5 py-3 font-mono text-xs">BK-2820</td>
+                    <td class="px-5 py-3">Ibrahim Touré</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded text-xs bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300">Orange Money</span></td>
+                    <td class="px-5 py-3 font-medium text-emerald-600">+ 180 000 F</td>
+                    <td class="px-5 py-3"><span class="text-xs text-emerald-600">Payé</span></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3">27/08 11:30</td>
+                    <td class="px-5 py-3 font-mono text-xs">BK-2812</td>
+                    <td class="px-5 py-3">Sékou Coulibaly</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded text-xs bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300">Espèces</span></td>
+                    <td class="px-5 py-3 font-medium text-emerald-600">+ 300 000 F</td>
+                    <td class="px-5 py-3"><span class="text-xs text-emerald-600">Payé</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== EMPLOYEES ========== -->
+        <div id="page-employees" class="page-content hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h1 class="font-display text-2xl font-bold">Employés</h1>
+              <p class="text-sm text-slate-500">6 membres • Hôtel Riviera & Palm Beach</p>
+            </div>
+            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold" onclick="showToast('Invitation employé envoyée (démo)')">
+              <i data-lucide="user-plus" class="w-4 h-4"></i> Inviter
+            </button>
+          </div>
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-50 dark:bg-slate-800/50 text-left text-xs text-slate-500 uppercase">
+                  <tr>
+                    <th class="px-5 py-3">Employé</th>
+                    <th class="px-5 py-3">Rôle</th>
+                    <th class="px-5 py-3">Établissement</th>
+                    <th class="px-5 py-3">Téléphone</th>
+                    <th class="px-5 py-3">Statut</th>
+                    <th class="px-5 py-3"></th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-brand-500 text-white text-xs font-bold flex items-center justify-center">MK</div>
+                        <div>
+                          <div class="font-medium">M. Kouassi</div>
+                          <div class="text-xs text-slate-500">kouassi@riviera.ci</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-brand-100 text-brand-700 dark:bg-brand-900/40 dark:text-brand-300">Admin</span></td>
+                    <td class="px-5 py-3">Tous</td>
+                    <td class="px-5 py-3 text-slate-500">07 00 00 00 01</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Actif</span></td>
+                    <td class="px-5 py-3 text-slate-400 text-xs">Vous</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-violet-500 text-white text-xs font-bold flex items-center justify-center">SY</div>
+                        <div>
+                          <div class="font-medium">Sylvie Yao</div>
+                          <div class="text-xs text-slate-500">sylvie@riviera.ci</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300">Réceptionniste</span></td>
+                    <td class="px-5 py-3">Hôtel Riviera</td>
+                    <td class="px-5 py-3 text-slate-500">07 00 00 00 02</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Actif</span></td>
+                    <td class="px-5 py-3"><button class="text-xs font-semibold text-amber-600 hover:underline" onclick="showToast('Sylvie Yao désactivée')">Désactiver</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center">AK</div>
+                        <div>
+                          <div class="font-medium">Awa Koné</div>
+                          <div class="text-xs text-slate-500">awa@riviera.ci</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">Ménage</span></td>
+                    <td class="px-5 py-3">Hôtel Riviera</td>
+                    <td class="px-5 py-3 text-slate-500">07 00 00 00 03</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Actif</span></td>
+                    <td class="px-5 py-3"><button class="text-xs font-semibold text-amber-600 hover:underline" onclick="showToast('Awa Koné désactivée')">Désactiver</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-rose-500 text-white text-xs font-bold flex items-center justify-center">MD</div>
+                        <div>
+                          <div class="font-medium">Mariam Diabaté</div>
+                          <div class="text-xs text-slate-500">mariam@riviera.ci</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">Ménage</span></td>
+                    <td class="px-5 py-3">Hôtel Riviera</td>
+                    <td class="px-5 py-3 text-slate-500">07 00 00 00 04</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Actif</span></td>
+                    <td class="px-5 py-3"><button class="text-xs font-semibold text-amber-600 hover:underline" onclick="showToast('Mariam Diabaté désactivée')">Désactiver</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                    <td class="px-5 py-3">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-sky-500 text-white text-xs font-bold flex items-center justify-center">KB</div>
+                        <div>
+                          <div class="font-medium">Koffi Brou</div>
+                          <div class="text-xs text-slate-500">koffi@palmbeach.ci</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300">Réceptionniste</span></td>
+                    <td class="px-5 py-3">Palm Beach</td>
+                    <td class="px-5 py-3 text-slate-500">07 00 00 00 05</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Actif</span></td>
+                    <td class="px-5 py-3"><button class="text-xs font-semibold text-amber-600 hover:underline" onclick="showToast('Koffi Brou désactivé')">Désactiver</button></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 opacity-60">
+                    <td class="px-5 py-3">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-slate-400 text-white text-xs font-bold flex items-center justify-center">YN</div>
+                        <div>
+                          <div class="font-medium">Yao N'Guessan</div>
+                          <div class="text-xs text-slate-500">yao@riviera.ci</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Réceptionniste</span></td>
+                    <td class="px-5 py-3">Hôtel Riviera</td>
+                    <td class="px-5 py-3 text-slate-500">07 00 00 00 06</td>
+                    <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-300">Inactif</span></td>
+                    <td class="px-5 py-3"><button class="text-xs font-semibold text-emerald-600 hover:underline" onclick="showToast('Yao N\'Guessan réactivé')">Réactiver</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== SUBSCRIPTION ========== -->
         <div id="page-subscription" class="page-content hidden space-y-6">
           <h1 class="font-display text-2xl font-bold">Abonnement</h1>
           <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
@@ -455,36 +891,168 @@
               <div>
                 <div class="text-sm text-slate-500">Plan actuel</div>
                 <div class="font-display text-2xl font-bold text-brand-600">Croissance</div>
-                <div class="text-sm text-slate-500 mt-1">Renouvellement le 15 sept. 2026</div>
+                <div class="text-sm text-slate-500 mt-1">Renouvellement le 15 sept. 2026 • 2 / 3 établissements</div>
               </div>
               <div class="text-right">
                 <div class="text-2xl font-bold">24 900 <span class="text-sm font-normal text-slate-500">FCFA / mois</span></div>
+                <div class="text-xs text-emerald-600 mt-1">Actif</div>
               </div>
             </div>
             <div class="flex flex-wrap gap-3">
-              <button class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold">Payer via Wave</button>
-              <button class="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800">Changer de plan</button>
+              <button class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold" onclick="showToast('Redirection paiement Wave…')">Payer via Wave</button>
+              <button class="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800" onclick="showToast('Comparatif des plans')">Changer de plan</button>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+              <div class="font-semibold mb-1">Essentiel</div>
+              <div class="text-2xl font-bold mb-2">9 900 F</div>
+              <ul class="text-xs text-slate-500 space-y-1 mb-4">
+                <li>• 1 établissement</li>
+                <li>• 20 chambres max</li>
+                <li>• Support email</li>
+              </ul>
+              <button class="w-full py-2 rounded-xl border text-sm font-medium" onclick="showToast('Passage au plan Essentiel')">Choisir</button>
+            </div>
+            <div class="p-5 rounded-2xl border-2 border-brand-500 bg-white dark:bg-slate-900 relative">
+              <span class="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-bold">Actuel</span>
+              <div class="font-semibold mb-1">Croissance</div>
+              <div class="text-2xl font-bold mb-2">24 900 F</div>
+              <ul class="text-xs text-slate-500 space-y-1 mb-4">
+                <li>• 3 établissements</li>
+                <li>• Chambres illimitées</li>
+                <li>• Multi-utilisateurs</li>
+              </ul>
+              <button class="w-full py-2 rounded-xl bg-brand-600 text-white text-sm font-medium" disabled>Plan actuel</button>
+            </div>
+            <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+              <div class="font-semibold mb-1">Entreprise</div>
+              <div class="text-2xl font-bold mb-2">54 900 F</div>
+              <ul class="text-xs text-slate-500 space-y-1 mb-4">
+                <li>• Illimité</li>
+                <li>• API & account manager</li>
+                <li>• Support prioritaire</li>
+              </ul>
+              <button class="w-full py-2 rounded-xl border text-sm font-medium" onclick="showToast('Demande plan Entreprise')">Choisir</button>
             </div>
           </div>
         </div>
 
-        <!-- Other pages placeholder -->
-        <div id="page-rooms" class="page-content hidden">
-          <h1 class="font-display text-2xl font-bold mb-4">Chambres</h1>
-          <p class="text-slate-500">Gestion des types et des chambres — démo interactive.</p>
+        <!-- ========== SETTINGS ========== -->
+        <div id="page-settings" class="page-content hidden space-y-6">
+          <h1 class="font-display text-2xl font-bold">Paramètres</h1>
+          <div class="grid lg:grid-cols-4 gap-6">
+            <div class="space-y-1">
+              <button class="settings-tab active w-full text-left px-3 py-2 rounded-lg text-sm font-medium bg-brand-50 dark:bg-brand-950/40 text-brand-700 dark:text-brand-300" data-settings="entreprise">Entreprise</button>
+              <button class="settings-tab w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" data-settings="compte">Compte</button>
+              <button class="settings-tab w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" data-settings="notifications">Notifications</button>
+              <button class="settings-tab w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" data-settings="whatsapp">WhatsApp</button>
+              <button class="settings-tab w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" data-settings="securite">Sécurité</button>
+            </div>
+            <div class="lg:col-span-3 space-y-4">
+              <div id="settings-entreprise" class="settings-panel bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
+                <h2 class="font-semibold text-lg">Entreprise</h2>
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Nom commercial</label>
+                    <input type="text" value="Hôtel Riviera & Palm Beach" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Ville</label>
+                    <input type="text" value="Abidjan" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                  </div>
+                  <div class="sm:col-span-2">
+                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Adresse</label>
+                    <input type="text" value="Rue des Jardins, Cocody" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Téléphone</label>
+                    <input type="text" value="+225 27 22 00 00 00" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Email contact</label>
+                    <input type="email" value="contact@riviera.ci" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                  </div>
+                </div>
+                <button class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold" onclick="showToast('Entreprise enregistrée')">Enregistrer</button>
+              </div>
+              <div id="settings-compte" class="settings-panel hidden bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
+                <h2 class="font-semibold text-lg">Mon compte</h2>
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Nom complet</label>
+                    <input type="text" value="M. Kouassi" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Email</label>
+                    <input type="email" value="kouassi@riviera.ci" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Téléphone</label>
+                    <input type="text" value="07 00 00 00 01" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                  </div>
+                </div>
+                <button class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold" onclick="showToast('Compte mis à jour')">Enregistrer</button>
+              </div>
+              <div id="settings-notifications" class="settings-panel hidden bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
+                <h2 class="font-semibold text-lg">Notifications</h2>
+                <label class="flex items-center justify-between py-2">
+                  <span class="text-sm">Nouvelle réservation</span>
+                  <input type="checkbox" checked class="rounded text-brand-600 focus:ring-brand-500" onchange="showToast('Préférence enregistrée')">
+                </label>
+                <label class="flex items-center justify-between py-2">
+                  <span class="text-sm">Check-in / Check-out</span>
+                  <input type="checkbox" checked class="rounded text-brand-600 focus:ring-brand-500" onchange="showToast('Préférence enregistrée')">
+                </label>
+                <label class="flex items-center justify-between py-2">
+                  <span class="text-sm">Paiements reçus</span>
+                  <input type="checkbox" checked class="rounded text-brand-600 focus:ring-brand-500" onchange="showToast('Préférence enregistrée')">
+                </label>
+                <label class="flex items-center justify-between py-2">
+                  <span class="text-sm">Alertes ménage</span>
+                  <input type="checkbox" class="rounded text-brand-600 focus:ring-brand-500" onchange="showToast('Préférence enregistrée')">
+                </label>
+                <label class="flex items-center justify-between py-2">
+                  <span class="text-sm">Abonnement bientôt expiré</span>
+                  <input type="checkbox" checked class="rounded text-brand-600 focus:ring-brand-500" onchange="showToast('Préférence enregistrée')">
+                </label>
+              </div>
+              <div id="settings-whatsapp" class="settings-panel hidden bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
+                <h2 class="font-semibold text-lg">WhatsApp Business</h2>
+                <p class="text-sm text-slate-500">Connectez votre numéro pour envoyer des confirmations de réservation.</p>
+                <div>
+                  <label class="block text-xs font-medium text-slate-500 mb-1.5">Numéro WhatsApp</label>
+                  <input type="text" placeholder="+225 07 XX XX XX XX" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-500 mb-1.5">Token API (optionnel)</label>
+                  <input type="password" placeholder="••••••••" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                </div>
+                <div class="flex gap-2">
+                  <button class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold" onclick="showToast('Config WhatsApp enregistrée')">Enregistrer</button>
+                  <button class="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-semibold" onclick="showToast('Message de test envoyé')">Tester</button>
+                </div>
+              </div>
+              <div id="settings-securite" class="settings-panel hidden bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
+                <h2 class="font-semibold text-lg">Sécurité</h2>
+                <div>
+                  <label class="block text-xs font-medium text-slate-500 mb-1.5">Mot de passe actuel</label>
+                  <input type="password" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-500 mb-1.5">Nouveau mot de passe</label>
+                  <input type="password" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-500 mb-1.5">Confirmer</label>
+                  <input type="password" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                </div>
+                <button class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold" onclick="showToast('Mot de passe modifié')">Modifier le mot de passe</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div id="page-accounting" class="page-content hidden">
-          <h1 class="font-display text-2xl font-bold mb-4">Comptabilité</h1>
-          <p class="text-slate-500">KPIs, transactions et factures — démo interactive.</p>
-        </div>
-        <div id="page-employees" class="page-content hidden">
-          <h1 class="font-display text-2xl font-bold mb-4">Employés</h1>
-          <p class="text-slate-500">Liste, rôles et activation — démo interactive.</p>
-        </div>
-        <div id="page-settings" class="page-content hidden">
-          <h1 class="font-display text-2xl font-bold mb-4">Paramètres</h1>
-          <p class="text-slate-500">Entreprise, compte, apparence, notifications, WhatsApp, sécurité.</p>
-        </div>
+
       </main>
     </div>
   </div>
@@ -504,6 +1072,10 @@
           <label class="block text-xs font-medium text-slate-500 mb-1.5">Client</label>
           <input type="text" placeholder="Nom complet" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none" required>
         </div>
+        <div>
+          <label class="block text-xs font-medium text-slate-500 mb-1.5">Téléphone</label>
+          <input type="tel" placeholder="07 XX XX XX XX" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+        </div>
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block text-xs font-medium text-slate-500 mb-1.5">Arrivée</label>
@@ -517,10 +1089,9 @@
         <div>
           <label class="block text-xs font-medium text-slate-500 mb-1.5">Chambre</label>
           <select class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-            <option>101 — Standard</option>
-            <option>112 — Standard</option>
-            <option>204 — Deluxe</option>
-            <option>308 — Suite</option>
+            <option>215 — Deluxe (75 000 F/nuit)</option>
+            <option>310 — Suite (120 000 F/nuit)</option>
+            <option>118 — Standard (45 000 F/nuit)</option>
           </select>
         </div>
         <button type="submit" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm">Créer la réservation</button>
@@ -528,9 +1099,8 @@
     </div>
   </div>
 
-  <!-- Toast -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium shadow-xl flex items-center gap-2">
-    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium shadow-xl items-center gap-2">
+    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
     <span id="toast-msg">Action réussie</span>
   </div>
 
