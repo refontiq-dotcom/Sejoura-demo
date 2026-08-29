@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Séjoura</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff', 100: '#e0effe', 200: '#b9dffd', 300: '#7cc5fb',
+              400: '#36a7f6', 500: '#0c8ce9', 600: '#006fc7', 700: '#0159a1',
+              800: '#064b85', 900: '#0b3f6e', 950: '#072849',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body class="h-full font-sans antialiased bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 overflow-hidden">
+
+  <div class="flex h-full">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 bg-slate-900 text-white flex flex-col transition-transform duration-300 lg:translate-x-0 -translate-x-full">
+      <!-- Logo -->
+      <div class="flex items-center gap-2.5 px-5 h-16 border-b border-slate-800 shrink-0">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center">
+          <i data-lucide="building-2" class="w-4 h-4 text-white"></i>
+        </div>
+        <span class="font-display font-bold text-lg">Séjoura</span>
+        <button id="sidebar-close" class="ml-auto lg:hidden p-1.5 rounded-lg hover:bg-slate-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Nav -->
+      <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
+        <a href="#" data-page="dashboard" class="nav-item active flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium bg-brand-600/20 text-brand-300">
+          <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+          Tableau de bord
+        </a>
+        <a href="#" data-page="residences" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+          <i data-lucide="building-2" class="w-5 h-5"></i>
+          Établissements
+        </a>
+        <a href="#" data-page="rooms" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+          <i data-lucide="bed-double" class="w-5 h-5"></i>
+          Chambres
+        </a>
+        <a href="#" data-page="bookings" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+          <i data-lucide="calendar-check" class="w-5 h-5"></i>
+          Réservations
+        </a>
+        <a href="#" data-page="cleaning" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+          Ménage
+        </a>
+        <a href="#" data-page="accounting" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+          <i data-lucide="wallet" class="w-5 h-5"></i>
+          Comptabilité
+        </a>
+        <a href="#" data-page="employees" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+          <i data-lucide="users" class="w-5 h-5"></i>
+          Employés
+        </a>
+        <a href="#" data-page="subscription" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+          <i data-lucide="credit-card" class="w-5 h-5"></i>
+          Abonnement
+        </a>
+        <a href="#" data-page="settings" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+          <i data-lucide="settings" class="w-5 h-5"></i>
+          Paramètres
+        </a>
+      </nav>
+
+      <!-- User footer -->
+      <div class="p-4 border-t border-slate-800 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-brand-500 flex items-center justify-center text-sm font-bold">MK</div>
+          <div class="flex-1 min-w-0">
+            <div class="text-sm font-semibold truncate">M. Kouassi</div>
+            <div class="text-xs text-slate-400">Admin • Plan Croissance</div>
+          </div>
+          <button id="logout-btn" class="p-2 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors" title="Se déconnecter">
+            <i data-lucide="log-out" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Overlay mobile -->
+    <div id="sidebar-overlay" class="fixed inset-0 z-30 bg-black/50 lg:hidden hidden"></div>
+
+    <!-- Main -->
+    <div class="flex-1 flex flex-col min-w-0 lg:ml-64 h-full">
+      <!-- Header -->
+      <header class="sticky top-0 z-20 h-16 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 flex items-center gap-4 px-4 sm:px-6 shrink-0">
+        <button id="sidebar-open" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+
+        <div class="flex-1 flex items-center gap-3">
+          <div class="relative max-w-md w-full hidden sm:block">
+            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></i>
+            <input type="search" placeholder="Rechercher réservation, chambre, client…" class="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none" id="global-search">
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="theme-toggle" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+            <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+            <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+          </button>
+
+          <div class="relative">
+            <button id="notif-btn" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 relative">
+              <i data-lucide="bell" class="w-5 h-5"></i>
+              <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500"></span>
+            </button>
+            <!-- Notif dropdown -->
+            <div id="notif-dropdown" class="hidden absolute right-0 mt-2 w-80 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-800 overflow-hidden z-50">
+              <div class="px-4 py-3 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                <span class="font-semibold text-sm">Notifications</span>
+                <button id="mark-all-read" class="text-xs text-brand-600 hover:underline">Tout marquer comme lu</button>
+              </div>
+              <div class="max-h-64 overflow-y-auto">
+                <div class="px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 border-b border-slate-50 dark:border-slate-800/50">
+                  <p class="text-sm font-medium">Nouvelle réservation #BK-2847</p>
+                  <p class="text-xs text-slate-500 mt-0.5">Il y a 12 min</p>
+                </div>
+                <div class="px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 border-b border-slate-50 dark:border-slate-800/50">
+                  <p class="text-sm font-medium">Chambre 204 prête après ménage</p>
+                  <p class="text-xs text-slate-500 mt-0.5">Il y a 45 min</p>
+                </div>
+                <div class="px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                  <p class="text-sm font-medium">Paiement Wave reçu — 24 900 FCFA</p>
+                  <p class="text-xs text-slate-500 mt-0.5">Hier</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-brand-600 px-2 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            Landing
+          </a>
+        </div>
+      </header>
+
+      <!-- Content pages -->
+      <main class="flex-1 overflow-y-auto p-4 sm:p-6">
+        <!-- PAGE: Dashboard -->
+        <div id="page-dashboard" class="page-content space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h1 class="font-display text-2xl font-bold">Tableau de bord</h1>
+              <p class="text-sm text-slate-500 dark:text-slate-400">Aujourd'hui • Samedi 29 août 2026</p>
+            </div>
+            <button id="btn-new-booking" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold shadow-lg shadow-brand-600/20">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+              Nouvelle réservation
+            </button>
+          </div>
+
+          <!-- KPIs -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-medium text-slate-500 uppercase tracking-wide">Occupation</span>
+                <div class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-950/50 flex items-center justify-center">
+                  <i data-lucide="bed-double" class="w-4 h-4 text-brand-600"></i>
+                </div>
+              </div>
+              <div class="text-2xl font-bold">87%</div>
+              <div class="text-xs text-emerald-600 mt-1 flex items-center gap-1">
+                <i data-lucide="trending-up" class="w-3 h-3"></i> +4% vs hier
+              </div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-medium text-slate-500 uppercase tracking-wide">Recettes du jour</span>
+                <div class="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-950/50 flex items-center justify-center">
+                  <i data-lucide="wallet" class="w-4 h-4 text-emerald-600"></i>
+                </div>
+              </div>
+              <div class="text-2xl font-bold">2 450 000</div>
+              <div class="text-xs text-slate-500 mt-1">FCFA</div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-medium text-slate-500 uppercase tracking-wide">Arrivées</span>
+                <div class="w-8 h-8 rounded-lg bg-violet-50 dark:bg-violet-950/50 flex items-center justify-center">
+                  <i data-lucide="log-in" class="w-4 h-4 text-violet-600"></i>
+                </div>
+              </div>
+              <div class="text-2xl font-bold">12</div>
+              <div class="text-xs text-slate-500 mt-1">dont 3 en attente</div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-medium text-slate-500 uppercase tracking-wide">Départs</span>
+                <div class="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-950/50 flex items-center justify-center">
+                  <i data-lucide="log-out" class="w-4 h-4 text-amber-600"></i>
+                </div>
+              </div>
+              <div class="text-2xl font-bold">8</div>
+              <div class="text-xs text-slate-500 mt-1">2 en retard</div>
+            </div>
+          </div>
+
+          <div class="grid lg:grid-cols-3 gap-6">
+            <!-- Mouvements -->
+            <div class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm overflow-hidden">
+              <div class="px-5 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                <h2 class="font-semibold">Mouvements du jour</h2>
+                <span class="text-xs text-slate-500">20 mouvements</span>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                  <thead class="bg-slate-50 dark:bg-slate-800/50 text-left text-xs text-slate-500 uppercase">
+                    <tr>
+                      <th class="px-5 py-3 font-medium">Client</th>
+                      <th class="px-5 py-3 font-medium">Chambre</th>
+                      <th class="px-5 py-3 font-medium">Type</th>
+                      <th class="px-5 py-3 font-medium">Heure</th>
+                      <th class="px-5 py-3 font-medium">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                      <td class="px-5 py-3 font-medium">Aya Koné</td>
+                      <td class="px-5 py-3">204</td>
+                      <td class="px-5 py-3"><span class="inline-flex px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Check-in</span></td>
+                      <td class="px-5 py-3 text-slate-500">14:00</td>
+                      <td class="px-5 py-3"><button class="action-btn text-xs font-semibold text-brand-600 hover:underline" data-action="checkin">Valider</button></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                      <td class="px-5 py-3 font-medium">Jean Bamba</td>
+                      <td class="px-5 py-3">112</td>
+                      <td class="px-5 py-3"><span class="inline-flex px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">Check-out</span></td>
+                      <td class="px-5 py-3 text-slate-500">11:30</td>
+                      <td class="px-5 py-3"><button class="action-btn text-xs font-semibold text-brand-600 hover:underline" data-action="checkout">Valider</button></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                      <td class="px-5 py-3 font-medium">Fatou Diallo</td>
+                      <td class="px-5 py-3">308</td>
+                      <td class="px-5 py-3"><span class="inline-flex px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Check-in</span></td>
+                      <td class="px-5 py-3 text-slate-500">15:00</td>
+                      <td class="px-5 py-3"><button class="action-btn text-xs font-semibold text-brand-600 hover:underline" data-action="checkin">Valider</button></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                      <td class="px-5 py-3 font-medium">Ibrahim Touré</td>
+                      <td class="px-5 py-3">101</td>
+                      <td class="px-5 py-3"><span class="inline-flex px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">Check-out</span></td>
+                      <td class="px-5 py-3 text-slate-500">10:00</td>
+                      <td class="px-5 py-3"><button class="action-btn text-xs font-semibold text-brand-600 hover:underline" data-action="checkout">Valider</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Chart occupancy -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm p-5">
+              <h2 class="font-semibold mb-4">État du parc</h2>
+              <div class="relative h-48">
+                <canvas id="occupancyChart"></canvas>
+              </div>
+              <div class="mt-4 space-y-2 text-sm">
+                <div class="flex items-center justify-between">
+                  <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Occupées</span>
+                  <span class="font-medium">42</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span> Disponibles</span>
+                  <span class="font-medium">6</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> En ménage</span>
+                  <span class="font-medium">4</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Revenue chart -->
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm p-5">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="font-semibold">Recettes 7 derniers jours</h2>
+              <span class="text-xs text-slate-500">FCFA</span>
+            </div>
+            <div class="h-56">
+              <canvas id="revenueChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE: Bookings -->
+        <div id="page-bookings" class="page-content hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <h1 class="font-display text-2xl font-bold">Réservations</h1>
+            <button id="btn-new-booking-2" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold">
+              <i data-lucide="plus" class="w-4 h-4"></i> Nouvelle réservation
+            </button>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button class="filter-btn active px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-600 text-white">Toutes</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Confirmées</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">En cours</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Terminées</button>
+          </div>
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm overflow-hidden">
+            <table class="w-full text-sm">
+              <thead class="bg-slate-50 dark:bg-slate-800/50 text-left text-xs text-slate-500 uppercase">
+                <tr>
+                  <th class="px-5 py-3">Réf.</th>
+                  <th class="px-5 py-3">Client</th>
+                  <th class="px-5 py-3">Chambre</th>
+                  <th class="px-5 py-3">Arrivée</th>
+                  <th class="px-5 py-3">Départ</th>
+                  <th class="px-5 py-3">Statut</th>
+                  <th class="px-5 py-3">Montant</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                  <td class="px-5 py-3 font-mono text-xs">BK-2847</td>
+                  <td class="px-5 py-3 font-medium">Aya Koné</td>
+                  <td class="px-5 py-3">204</td>
+                  <td class="px-5 py-3">29/08</td>
+                  <td class="px-5 py-3">02/09</td>
+                  <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">Confirmée</span></td>
+                  <td class="px-5 py-3 font-medium">185 000 F</td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                  <td class="px-5 py-3 font-mono text-xs">BK-2841</td>
+                  <td class="px-5 py-3 font-medium">Jean Bamba</td>
+                  <td class="px-5 py-3">112</td>
+                  <td class="px-5 py-3">27/08</td>
+                  <td class="px-5 py-3">29/08</td>
+                  <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">En cours</span></td>
+                  <td class="px-5 py-3 font-medium">90 000 F</td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                  <td class="px-5 py-3 font-mono text-xs">BK-2835</td>
+                  <td class="px-5 py-3 font-medium">Fatou Diallo</td>
+                  <td class="px-5 py-3">308</td>
+                  <td class="px-5 py-3">29/08</td>
+                  <td class="px-5 py-3">01/09</td>
+                  <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">Confirmée</span></td>
+                  <td class="px-5 py-3 font-medium">210 000 F</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- PAGE: Cleaning -->
+        <div id="page-cleaning" class="page-content hidden space-y-6">
+          <h1 class="font-display text-2xl font-bold">Ménage</h1>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
+              <h3 class="text-sm font-semibold text-slate-500 mb-3 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span> À faire (4)
+              </h3>
+              <div class="space-y-2">
+                <div class="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/50 text-sm">
+                  <div class="font-medium">Chambre 101</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Check-out 10:00</div>
+                </div>
+                <div class="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/50 text-sm">
+                  <div class="font-medium">Chambre 215</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Check-out 11:00</div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
+              <h3 class="text-sm font-semibold text-slate-500 mb-3 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span> En cours (2)
+              </h3>
+              <div class="space-y-2">
+                <div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/50 text-sm">
+                  <div class="font-medium">Chambre 204</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Assigné: Awa</div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
+              <h3 class="text-sm font-semibold text-slate-500 mb-3 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Terminées (6)
+              </h3>
+              <div class="space-y-2">
+                <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/50 text-sm">
+                  <div class="font-medium">Chambre 112</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Terminé 09:45</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE: Residences -->
+        <div id="page-residences" class="page-content hidden space-y-6">
+          <div class="flex items-center justify-between">
+            <h1 class="font-display text-2xl font-bold">Établissements</h1>
+            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold">
+              <i data-lucide="plus" class="w-4 h-4"></i> Ajouter
+            </button>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 hover:shadow-lg transition-shadow">
+              <div class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/50 flex items-center justify-center mb-4">
+                <i data-lucide="building-2" class="w-6 h-6 text-brand-600"></i>
+              </div>
+              <h3 class="font-semibold text-lg">Hôtel Riviera</h3>
+              <p class="text-sm text-slate-500 mt-1">Abidjan, Cocody • 28 chambres</p>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Actif</span>
+                <span class="text-xs text-slate-500">87% occupation</span>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 hover:shadow-lg transition-shadow">
+              <div class="w-12 h-12 rounded-xl bg-violet-100 dark:bg-violet-900/50 flex items-center justify-center mb-4">
+                <i data-lucide="building-2" class="w-6 h-6 text-violet-600"></i>
+              </div>
+              <h3 class="font-semibold text-lg">Résidence Palm Beach</h3>
+              <p class="text-sm text-slate-500 mt-1">Grand-Bassam • 16 chambres</p>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Actif</span>
+                <span class="text-xs text-slate-500">72% occupation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE: Subscription -->
+        <div id="page-subscription" class="page-content hidden space-y-6">
+          <h1 class="font-display text-2xl font-bold">Abonnement</h1>
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <div>
+                <div class="text-sm text-slate-500">Plan actuel</div>
+                <div class="font-display text-2xl font-bold text-brand-600">Croissance</div>
+                <div class="text-sm text-slate-500 mt-1">Renouvellement le 15 sept. 2026</div>
+              </div>
+              <div class="text-right">
+                <div class="text-2xl font-bold">24 900 <span class="text-sm font-normal text-slate-500">FCFA / mois</span></div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <button class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold">Payer via Wave</button>
+              <button class="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800">Changer de plan</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other pages placeholder -->
+        <div id="page-rooms" class="page-content hidden">
+          <h1 class="font-display text-2xl font-bold mb-4">Chambres</h1>
+          <p class="text-slate-500">Gestion des types et des chambres — démo interactive.</p>
+        </div>
+        <div id="page-accounting" class="page-content hidden">
+          <h1 class="font-display text-2xl font-bold mb-4">Comptabilité</h1>
+          <p class="text-slate-500">KPIs, transactions et factures — démo interactive.</p>
+        </div>
+        <div id="page-employees" class="page-content hidden">
+          <h1 class="font-display text-2xl font-bold mb-4">Employés</h1>
+          <p class="text-slate-500">Liste, rôles et activation — démo interactive.</p>
+        </div>
+        <div id="page-settings" class="page-content hidden">
+          <h1 class="font-display text-2xl font-bold mb-4">Paramètres</h1>
+          <p class="text-slate-500">Entreprise, compte, apparence, notifications, WhatsApp, sécurité.</p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal Nouvelle réservation -->
+  <div id="modal-booking" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black/50" id="modal-backdrop"></div>
+    <div class="relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-md p-6 border border-slate-200 dark:border-slate-800">
+      <div class="flex items-center justify-between mb-5">
+        <h3 class="font-display font-bold text-lg">Nouvelle réservation</h3>
+        <button id="modal-close" class="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <form id="booking-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-medium text-slate-500 mb-1.5">Client</label>
+          <input type="text" placeholder="Nom complet" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none" required>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-medium text-slate-500 mb-1.5">Arrivée</label>
+            <input type="date" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none" required>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-500 mb-1.5">Départ</label>
+            <input type="date" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none" required>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-slate-500 mb-1.5">Chambre</label>
+          <select class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+            <option>101 — Standard</option>
+            <option>112 — Standard</option>
+            <option>204 — Deluxe</option>
+            <option>308 — Suite</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm">Créer la réservation</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium shadow-xl flex items-center gap-2">
+    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toast-msg">Action réussie</span>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
