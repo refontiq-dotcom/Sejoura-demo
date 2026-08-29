@@ -1,3 +1,11 @@
+function openRoomsPage() {
+  document.querySelectorAll('.page-content').forEach(function(p) { p.classList.add('hidden'); });
+  var page = document.getElementById('page-rooms');
+  if (page) page.classList.remove('hidden');
+  if (window.lucide) lucide.createIcons();
+  showToast('Chambres de l\'établissement');
+}
+
 // Séjoura Dashboard — Interactive demo logic
 
 function showToast(msg) {
@@ -18,6 +26,20 @@ function showToast(msg) {
 }
 
 (function () {
+
+  document.getElementById('goto-subscription')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const sub = document.querySelector('.nav-item[data-page="settings"]');
+    // show subscription page directly
+    document.querySelectorAll('.nav-item').forEach(n => {
+      n.classList.remove('active', 'bg-brand-600/20', 'text-brand-300');
+      n.classList.add('text-slate-300');
+    });
+    document.querySelectorAll('.page-content').forEach(p => p.classList.add('hidden'));
+    document.getElementById('page-subscription')?.classList.remove('hidden');
+    if (window.lucide) lucide.createIcons();
+  });
+
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('sidebar-overlay');
   const openBtn = document.getElementById('sidebar-open');

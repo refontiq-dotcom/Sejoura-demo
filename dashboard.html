@@ -37,10 +37,13 @@
     <!-- Sidebar -->
     <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 bg-slate-900 text-white flex flex-col transition-transform duration-300 lg:translate-x-0 -translate-x-full">
       <div class="flex items-center gap-2.5 px-5 h-16 border-b border-slate-800 shrink-0">
-        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center">
-          <i data-lucide="building-2" class="w-4 h-4 text-white"></i>
+        <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
+          <i data-lucide="building-2" class="w-4 h-4 text-brand-600"></i>
         </div>
-        <span class="font-display font-bold text-lg">Séjoura</span>
+        <div class="min-w-0">
+          <div class="font-display font-bold text-sm truncate leading-tight">Hôtel Riviera</div>
+          <div class="text-[10px] text-brand-300 font-semibold">Séjoura SaaS</div>
+        </div>
         <button id="sidebar-close" class="ml-auto lg:hidden p-1.5 rounded-lg hover:bg-slate-800">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
@@ -52,14 +55,14 @@
         <a href="#" data-page="residences" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
           <i data-lucide="building-2" class="w-5 h-5"></i> Établissements
         </a>
-        <a href="#" data-page="rooms" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-          <i data-lucide="bed-double" class="w-5 h-5"></i> Chambres
-        </a>
         <a href="#" data-page="bookings" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
           <i data-lucide="calendar-check" class="w-5 h-5"></i> Réservations
         </a>
         <a href="#" data-page="cleaning" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-          <i data-lucide="sparkles" class="w-5 h-5"></i> Ménage
+          <i data-lucide="sparkles" class="w-5 h-5"></i> Suivi ménage
+        </a>
+        <a href="#" data-page="shift" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+          <i data-lucide="clipboard-list" class="w-5 h-5"></i> Mon Shift / Caisse
         </a>
         <a href="#" data-page="accounting" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
           <i data-lucide="wallet" class="w-5 h-5"></i> Comptabilité
@@ -67,8 +70,11 @@
         <a href="#" data-page="employees" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
           <i data-lucide="users" class="w-5 h-5"></i> Employés
         </a>
-        <a href="#" data-page="subscription" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-          <i data-lucide="credit-card" class="w-5 h-5"></i> Abonnement
+        <a href="#" data-page="hr" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+          <i data-lucide="id-card" class="w-5 h-5"></i> Dossiers RH
+        </a>
+        <a href="#" data-page="trouvetou" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+          <i data-lucide="store" class="w-5 h-5"></i> Vitrine Trouvetou
         </a>
         <a href="#" data-page="settings" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
           <i data-lucide="settings" class="w-5 h-5"></i> Paramètres
@@ -297,7 +303,7 @@
                   <div class="text-[10px] text-slate-500">Arrivées</div>
                 </div>
               </div>
-              <button class="mt-4 w-full py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800" onclick="showToast('Ouverture détail Hôtel Riviera')">Voir le détail</button>
+              <button class="mt-4 w-full py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800" onclick="openRoomsPage()">Voir le détail</button>
             </div>
             <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 hover:shadow-lg transition-shadow">
               <div class="flex items-start justify-between mb-4">
@@ -322,7 +328,7 @@
                   <div class="text-[10px] text-slate-500">Arrivées</div>
                 </div>
               </div>
-              <button class="mt-4 w-full py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800" onclick="showToast('Ouverture détail Palm Beach')">Voir le détail</button>
+              <button class="mt-4 w-full py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800" onclick="openRoomsPage()">Voir le détail</button>
             </div>
             <div class="bg-white dark:bg-slate-900 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 p-5 flex flex-col items-center justify-center min-h-[220px] text-center hover:border-brand-400 transition-colors cursor-pointer" onclick="showToast('Ajout 3e établissement (limite plan Croissance)')">
               <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-3">
@@ -576,7 +582,7 @@
         <div id="page-cleaning" class="page-content hidden space-y-6">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <h1 class="font-display text-2xl font-bold">Ménage</h1>
+              <h1 class="font-display text-2xl font-bold">Suivi ménage</h1>
               <p class="text-sm text-slate-500">Kanban du jour • Hôtel Riviera</p>
             </div>
             <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800" onclick="showToast('Assignation en masse (démo)')">
@@ -938,6 +944,156 @@
           </div>
         </div>
 
+
+        <!-- ========== SHIFT ========== -->
+        <div id="page-shift" class="page-content hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h1 class="font-display text-2xl font-bold">Mon Shift / Caisse</h1>
+              <p class="text-sm text-slate-500">Session ouverte • 29 août 2026 • 08:02</p>
+            </div>
+            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold" onclick="showToast('Shift clôturé — rapport généré')">
+              <i data-lucide="lock" class="w-4 h-4"></i> Clôturer le shift
+            </button>
+          </div>
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs text-slate-500 uppercase mb-1">Fond de caisse</div>
+              <div class="text-2xl font-bold">50 000</div>
+              <div class="text-xs text-slate-500">FCFA</div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs text-slate-500 uppercase mb-1">Encaissements</div>
+              <div class="text-2xl font-bold text-emerald-600">1 240 000</div>
+              <div class="text-xs text-slate-500">12 opérations</div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs text-slate-500 uppercase mb-1">Wave</div>
+              <div class="text-2xl font-bold">780 000</div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs text-slate-500 uppercase mb-1">Espèces</div>
+              <div class="text-2xl font-bold">460 000</div>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+            <div class="px-5 py-4 border-b border-slate-100 dark:border-slate-800 font-semibold">Mouvements de caisse du shift</div>
+            <table class="w-full text-sm">
+              <thead class="bg-slate-50 dark:bg-slate-800/50 text-left text-xs text-slate-500 uppercase">
+                <tr><th class="px-5 py-3">Heure</th><th class="px-5 py-3">Type</th><th class="px-5 py-3">Client / libellé</th><th class="px-5 py-3">Mode</th><th class="px-5 py-3">Montant</th></tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                <tr><td class="px-5 py-3">09:12</td><td class="px-5 py-3">Check-in</td><td class="px-5 py-3">Aya Koné • BK-2847</td><td class="px-5 py-3">Wave</td><td class="px-5 py-3 text-emerald-600 font-medium">+150 000</td></tr>
+                <tr><td class="px-5 py-3">10:05</td><td class="px-5 py-3">Check-out</td><td class="px-5 py-3">Jean Bamba • BK-2841</td><td class="px-5 py-3">Espèces</td><td class="px-5 py-3 text-emerald-600 font-medium">+90 000</td></tr>
+                <tr><td class="px-5 py-3">11:40</td><td class="px-5 py-3">Acompte</td><td class="px-5 py-3">Fatou Diallo • BK-2835</td><td class="px-5 py-3">Wave</td><td class="px-5 py-3 text-emerald-600 font-medium">+180 000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ========== HR ========== -->
+        <div id="page-hr" class="page-content hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h1 class="font-display text-2xl font-bold">Dossiers RH</h1>
+              <p class="text-sm text-slate-500">Contrats, documents, présence</p>
+            </div>
+            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold" onclick="showToast('Nouveau dossier RH (démo)')">
+              <i data-lucide="plus" class="w-4 h-4"></i> Ajouter un dossier
+            </button>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 text-center">
+              <div class="text-2xl font-bold">6</div>
+              <div class="text-xs text-slate-500">Dossiers actifs</div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 text-center">
+              <div class="text-2xl font-bold text-amber-600">2</div>
+              <div class="text-xs text-slate-500">Docs à renouveler</div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 text-center">
+              <div class="text-2xl font-bold text-emerald-600">4</div>
+              <div class="text-xs text-slate-500">Présents aujourd'hui</div>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+            <table class="w-full text-sm">
+              <thead class="bg-slate-50 dark:bg-slate-800/50 text-left text-xs text-slate-500 uppercase">
+                <tr><th class="px-5 py-3">Employé</th><th class="px-5 py-3">Poste</th><th class="px-5 py-3">Contrat</th><th class="px-5 py-3">Fin</th><th class="px-5 py-3">Docs</th><th class="px-5 py-3"></th></tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                  <td class="px-5 py-3 font-medium">Sylvie Yao</td>
+                  <td class="px-5 py-3">Réceptionniste</td>
+                  <td class="px-5 py-3">CDI</td>
+                  <td class="px-5 py-3 text-slate-500">—</td>
+                  <td class="px-5 py-3"><span class="text-xs text-emerald-600">Complet</span></td>
+                  <td class="px-5 py-3"><button class="text-xs text-brand-600 font-semibold" onclick="showToast('Dossier Sylvie Yao')">Ouvrir</button></td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                  <td class="px-5 py-3 font-medium">Awa Koné</td>
+                  <td class="px-5 py-3">Ménage</td>
+                  <td class="px-5 py-3">CDD</td>
+                  <td class="px-5 py-3 text-amber-600">15/10/2026</td>
+                  <td class="px-5 py-3"><span class="text-xs text-amber-600">CNI à jour</span></td>
+                  <td class="px-5 py-3"><button class="text-xs text-brand-600 font-semibold" onclick="showToast('Dossier Awa Koné')">Ouvrir</button></td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                  <td class="px-5 py-3 font-medium">Mariam Diabaté</td>
+                  <td class="px-5 py-3">Ménage</td>
+                  <td class="px-5 py-3">CDD</td>
+                  <td class="px-5 py-3 text-amber-600">01/11/2026</td>
+                  <td class="px-5 py-3"><span class="text-xs text-amber-600">1 doc manquant</span></td>
+                  <td class="px-5 py-3"><button class="text-xs text-brand-600 font-semibold" onclick="showToast('Dossier Mariam')">Ouvrir</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ========== TROUVETOU ========== -->
+        <div id="page-trouvetou" class="page-content hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h1 class="font-display text-2xl font-bold">Vitrine Trouvetou</h1>
+              <p class="text-sm text-slate-500">Visibilité en ligne de vos établissements</p>
+            </div>
+            <button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold" onclick="showToast('Vitrine publiée (démo)')">
+              <i data-lucide="globe" class="w-4 h-4"></i> Publier
+            </button>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="font-semibold">Hôtel Riviera</h3>
+                <span class="px-2 py-0.5 rounded-full text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Publié</span>
+              </div>
+              <p class="text-sm text-slate-500 mb-4">Cocody • 28 chambres • à partir de 45 000 F</p>
+              <div class="flex gap-2 text-xs">
+                <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800">Wi‑Fi</span>
+                <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800">Clim</span>
+                <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800">Parking</span>
+              </div>
+              <button class="mt-4 w-full py-2 rounded-xl border text-sm font-medium" onclick="showToast('Édition vitrine Riviera')">Modifier la fiche</button>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="font-semibold">Résidence Palm Beach</h3>
+                <span class="px-2 py-0.5 rounded-full text-xs bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">Brouillon</span>
+              </div>
+              <p class="text-sm text-slate-500 mb-4">Grand-Bassam • 16 chambres • à partir de 35 000 F</p>
+              <div class="flex gap-2 text-xs">
+                <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800">Piscine</span>
+                <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800">Petit-déj</span>
+              </div>
+              <button class="mt-4 w-full py-2 rounded-xl border text-sm font-medium" onclick="showToast('Édition vitrine Palm Beach')">Modifier la fiche</button>
+            </div>
+          </div>
+          <div class="bg-slate-50 dark:bg-slate-900/60 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 p-6 text-center">
+            <p class="text-sm text-slate-600 dark:text-slate-300">Les clients découvrent vos chambres sur Trouvetou et réservent → les demandes arrivent dans <strong>Réservations</strong>.</p>
+          </div>
+        </div>
+
         <!-- ========== SETTINGS ========== -->
         <div id="page-settings" class="page-content hidden space-y-6">
           <h1 class="font-display text-2xl font-bold">Paramètres</h1>
@@ -945,9 +1101,12 @@
             <div class="space-y-1">
               <button class="settings-tab active w-full text-left px-3 py-2 rounded-lg text-sm font-medium bg-brand-50 dark:bg-brand-950/40 text-brand-700 dark:text-brand-300" data-settings="entreprise">Entreprise</button>
               <button class="settings-tab w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" data-settings="compte">Compte</button>
+              <button class="settings-tab w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" data-settings="apparence">Apparence</button>
               <button class="settings-tab w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" data-settings="notifications">Notifications</button>
+              <button class="settings-tab w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" data-settings="facturation">Facturation</button>
               <button class="settings-tab w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" data-settings="whatsapp">WhatsApp</button>
               <button class="settings-tab w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" data-settings="securite">Sécurité</button>
+              <button class="w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-950/30" data-page="subscription" id="goto-subscription">→ Abonnement</button>
             </div>
             <div class="lg:col-span-3 space-y-4">
               <div id="settings-entreprise" class="settings-panel bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
@@ -1016,6 +1175,41 @@
                   <span class="text-sm">Abonnement bientôt expiré</span>
                   <input type="checkbox" checked class="rounded text-brand-600 focus:ring-brand-500" onchange="showToast('Préférence enregistrée')">
                 </label>
+              </div>
+              <div id="settings-apparence" class="settings-panel hidden bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
+                <h2 class="font-semibold text-lg">Apparence</h2>
+                <p class="text-sm text-slate-500">Thème de la sidebar et mode clair / sombre (comme dans le produit).</p>
+                <div class="flex gap-3">
+                  <button class="px-4 py-2 rounded-xl border text-sm font-medium" onclick="document.documentElement.classList.remove('dark'); showToast('Thème clair')">Clair</button>
+                  <button class="px-4 py-2 rounded-xl border text-sm font-medium" onclick="document.documentElement.classList.add('dark'); showToast('Thème sombre')">Sombre</button>
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-500 mb-1.5">Couleur d'accent</label>
+                  <div class="flex gap-2">
+                    <button class="w-8 h-8 rounded-full bg-blue-600 ring-2 ring-offset-2 ring-blue-600" onclick="showToast('Accent bleu')"></button>
+                    <button class="w-8 h-8 rounded-full bg-emerald-600" onclick="showToast('Accent vert')"></button>
+                    <button class="w-8 h-8 rounded-full bg-violet-600" onclick="showToast('Accent violet')"></button>
+                    <button class="w-8 h-8 rounded-full bg-amber-600" onclick="showToast('Accent ambre')"></button>
+                  </div>
+                </div>
+              </div>
+              <div id="settings-facturation" class="settings-panel hidden bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
+                <h2 class="font-semibold text-lg">Facturation</h2>
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Raison sociale</label>
+                    <input type="text" value="SARL Riviera Hospitality" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm outline-none focus:ring-2 focus:ring-brand-500">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1.5">N° RCCM / IFU</label>
+                    <input type="text" value="CI-ABJ-2020-B-12345" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm outline-none focus:ring-2 focus:ring-brand-500">
+                  </div>
+                  <div class="sm:col-span-2">
+                    <label class="block text-xs font-medium text-slate-500 mb-1.5">Mentions légales facture</label>
+                    <textarea rows="2" class="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border-0 text-sm outline-none focus:ring-2 focus:ring-brand-500">TVA non applicable — art. …</textarea>
+                  </div>
+                </div>
+                <button class="px-4 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-semibold" onclick="showToast('Facturation enregistrée')">Enregistrer</button>
               </div>
               <div id="settings-whatsapp" class="settings-panel hidden bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
                 <h2 class="font-semibold text-lg">WhatsApp Business</h2>
